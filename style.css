@@ -3,13 +3,33 @@ html {
     text-align: center;
 }
 
+
+
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.lemon {
+    font-family: 'Roboto', sans-serif;
+}
+
+.brains {
+    font-family: 'Creepster', cursive;
+    font-size: 1.3em;
+}
+
+.logo {
+    font-size: 2em;
+}
+
 .zombie {
     position: relative;
     animation-name: zombie-walk;
-    animation-duration: 40s;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes zombie-walk {
     0% { left: 500px}
     100% { left: -500px}
 }
+

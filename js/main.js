@@ -1,5 +1,5 @@
 // TODO: Review where the sprite is on the screen
-const SPRITE_WIDTH = 320; // The total width in px divided by the number of columns
+const SPRITE_WIDTH = 320; // The total width in px divided by the number of columns (zombie is currently at 10x scale at 640 x 320)
 const SPRITE_HEIGHT = 320; // The total height in px divided by the total rows
 const BORDER_WIDTH = 1;
 const SPACING_WIDTH = 1;
