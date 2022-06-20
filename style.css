@@ -1,0 +1,15 @@
+/* TODO Create a new directory and add SASS instead. */
+html {
+    text-align: center;
+}
+
+.zombie {
+    position: relative;
+    animation-name: zombie-walk;
+    animation-duration: 40s;
+}
+
+@keyframes zombie-walk {
+    0% { left: 500px}
+    100% { left: -500px}
+}
