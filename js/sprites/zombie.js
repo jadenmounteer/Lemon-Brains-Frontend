@@ -8,17 +8,12 @@ export default class Zombie extends Sprite {
   canvas = document.querySelector('.zombie');
   context = this.canvas.getContext('2d');
   spriteSheetURL = 'Assets/Spritesheets/zombie-walking-left.png';
-
-  // Animations
-  walkCycle = [];
-
   // misc
   frameIndex = 0;
   frame;
-
   image = new Image();
 
-  // Get all of the frames
+  // Animations
   zombie0 = this.spritePositionToImagePosition(0, 0);
   zombie1 = this.spritePositionToImagePosition(0, 1);
   walkCycle = [this.zombie0, this.zombie1];
@@ -28,5 +23,30 @@ export default class Zombie extends Sprite {
     super();
     this.image.src = this.spriteSheetURL;
     this.image.crossOrigin = true;
+  }
+
+  walkLeft() {
+    // once we hit the end of the cycle, start again
+    if (this.frameIndex === this.walkCycle.length) {
+      this.frameIndex = 0;
+    }
+    this.frame = this.walkCycle[this.frameIndex];
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.context.drawImage(
+      this.image,
+      this.frame.x,
+      this.frame.y,
+      this.SPRITE_WIDTH,
+      this.SPRITE_HEIGHT,
+      0,
+      0,
+      this.SPRITE_WIDTH,
+      this.SPRITE_HEIGHT
+    );
+    this.frameIndex += 1;
+  }
+
+  spawn() {
+    setInterval(this.walkLeft.bind(this), 500);
   }
 }
