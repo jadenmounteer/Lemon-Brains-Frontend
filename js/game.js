@@ -7,6 +7,8 @@ export default class Game {
   constructor() {}
 
   create() {
+    // TODO Create settings object and initialize the settings
+
     var aZombie = new Zombie('.zombie');
     aZombie.image.onload = aZombie.walkLeft();
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
@@ -36,12 +38,20 @@ export default class Game {
   }
 
   update() {
+    // TODO Loop through each of the zombies
     console.log('updating');
     let zombie = this.listOfZombies[0];
     let zombiePosition = zombie.getXCoordinate();
+    // Check for game over
     if (zombiePosition < -70) {
       this.gameOver();
     }
+
+    // END Loop
+
+    // Check if we should spawn a zombie (random. More chance the more difficult)
+
+    // If we span a zombie, call the zombie factory
   }
   gameOver() {
     console.log('Game over');
