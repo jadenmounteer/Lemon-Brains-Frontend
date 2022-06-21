@@ -1,5 +1,11 @@
 .zombie {
-    position: relative;
+    width: 500px;
+    height: 500px;
+    // border: 1px solid;
+    position: absolute;
+}
+
+.walking {
     animation-name: zombie-walk;
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -8,6 +14,6 @@
 
 /*** ANIMATIONS ***/
 @keyframes zombie-walk {
-    0% { left: 500px}
-    100% { left: -500px}
+    0% { left: 100%}
+    100% { left: -20%}
 }

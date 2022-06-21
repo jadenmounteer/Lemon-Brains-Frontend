@@ -10,7 +10,12 @@
 /**** FONTS  (Some fonts are imported directly in the index.html file ***/
 /* Import Roboto font */
 .zombie {
-  position: relative;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.walking {
   animation-name: zombie-walk;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -19,10 +24,10 @@
 /*** ANIMATIONS ***/
 @keyframes zombie-walk {
   0% {
-    left: 500px;
+    left: 100%;
   }
   100% {
-    left: -500px;
+    left: -20%;
   }
 }
 .lemon {
@@ -55,6 +60,11 @@
 nav {
   background-color: #CA7D53;
   color: white;
+}
+
+.playing-field {
+  border: 0px solid;
+  max-height: 500px;
 }
 
 /*# sourceMappingURL=styles.css.map */

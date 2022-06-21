@@ -5,8 +5,8 @@ export default class Zombie extends Sprite {
   SPRITE_HEIGHT = 320; // The total height in px divided by the total rows
   BORDER_WIDTH = 1;
   SPACING_WIDTH = 1;
-  canvas = document.querySelector('.zombie');
-  context = this.canvas.getContext('2d');
+  canvas;
+  context;
   spriteSheetURL = 'Assets/Spritesheets/zombie-walking-left.png';
   // misc
   frameIndex = 0;
@@ -21,8 +21,10 @@ export default class Zombie extends Sprite {
   // Speeds
   walkingSpeed = 500;
 
-  constructor() {
+  constructor(canvasQuery) {
     super();
+    this.canvas = document.querySelector(canvasQuery);
+    this.context = this.canvas.getContext('2d');
     this.image.src = this.spriteSheetURL;
     this.image.crossOrigin = true;
   }

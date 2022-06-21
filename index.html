@@ -15,7 +15,6 @@
 <body>
     <nav>
         <div class="logo">
-            <!-- <canvas class="logo-sprite" width="100px" height="100px"></canvas> -->
             <div class="logo-gif-div">
                 <img class="logo-gif" src="assets/gifs/Logo.gif">
             </div>
@@ -25,9 +24,12 @@
         </div>
     </nav>
     
+    <div class="playing-field">
+        <!-- create a canvas at least the same size as the sprite sheet -->
+        <canvas class="zombie zombie1" width="500px" height="500px"></canvas>
+        <canvas class="zombie zombie2" width="500px" height="500px"></canvas>
+    </div>
     
-    <!-- create a canvas at least the same size as the sprite sheet -->
-    <canvas class="zombie" width="500px" height="500px"></canvas>
 </body>
 <script src="js/main.js" type="module"></script>
 </html>
