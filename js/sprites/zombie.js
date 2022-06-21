@@ -1,6 +1,6 @@
-// import Sprite from './sprite.js';
+import Sprite from './sprite.js';
 
-export default class Zombie {
+export default class Zombie extends Sprite {
   SPRITE_WIDTH = 320;
   SPRITE_HEIGHT = 320; // The total height in px divided by the total rows
   BORDER_WIDTH = 1;
@@ -25,37 +25,8 @@ export default class Zombie {
   walkCycleLength = this.walkCycle.length;
 
   constructor() {
+    super();
     this.image.src = this.spriteSheetURL;
     this.image.crossOrigin = true;
-  }
-
-  spritePositionToImagePosition(row, col) {
-    return {
-      x: this.BORDER_WIDTH + col * (this.SPACING_WIDTH + this.SPRITE_WIDTH),
-      y: this.BORDER_WIDTH + row * (this.SPACING_WIDTH + this.SPRITE_HEIGHT),
-    };
-  }
-
-  // TODO I can probably take an animation is an input and put this in the parent class
-  animate() {
-    // once we hit the end of the cycle,
-    // start again
-    if (this.frameIndex === this.walkCycle.length) {
-      this.frameIndex = 0;
-    }
-    this.frame = this.walkCycle[this.frameIndex];
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.context.drawImage(
-      this.image,
-      this.frame.x,
-      this.frame.y,
-      this.SPRITE_WIDTH,
-      this.SPRITE_HEIGHT,
-      0,
-      0,
-      this.SPRITE_WIDTH,
-      this.SPRITE_HEIGHT
-    );
-    this.frameIndex += 1;
   }
 }
