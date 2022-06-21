@@ -7,12 +7,31 @@
     font-size: 1.3em;
 }
 
+.logo-sprite {
+ 
+    
+}
+
+.logo-words {
+    
+}
+
+.logo-gif-div {
+     width: 100px;
+     height: 100px;
+     
+}
+
+
 .logo {
     font-size: 2em;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include breakpoint(medium) {
-        text-align: left;
+        justify-content: left;
       }
 
 }

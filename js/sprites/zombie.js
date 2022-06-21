@@ -17,7 +17,6 @@ export default class Zombie extends Sprite {
   zombie0 = this.spritePositionToImagePosition(0, 0);
   zombie1 = this.spritePositionToImagePosition(0, 1);
   walkCycle = [this.zombie0, this.zombie1];
-  walkCycleLength = this.walkCycle.length;
 
   // Speeds
   walkingSpeed = 500;

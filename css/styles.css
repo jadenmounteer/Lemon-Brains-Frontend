@@ -34,14 +34,27 @@
   font-size: 1.3em;
 }
 
+.logo-gif-div {
+  width: 100px;
+  height: 100px;
+}
+
 .logo {
   font-size: 2em;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 950px) {
   .logo {
-    text-align: left;
+    justify-content: left;
   }
+}
+
+nav {
+  background-color: #CA7D53;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
