@@ -8,6 +8,7 @@
 
 
 /*** Variables ***/
+$zombieGreen:#accf77;
 
 // Breakpoints
 $break-large: 1700px;
@@ -27,3 +28,10 @@ $break-small: 510px;
 @import "partials/logo";
 @import "partials/nav";
 
+
+#gameOver {
+    text-align: center;
+    font-size: 5em;
+    display: none;
+    color: $zombieGreen;
+}

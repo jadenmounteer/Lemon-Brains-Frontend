@@ -29,7 +29,6 @@ export default class Zombie extends Sprite {
     this.image.crossOrigin = true;
   }
 
-  // Will likely need to use clearInterval to destroy the zombies https://www.w3schools.com/jsref/met_win_clearinterval.asp
   walkLeft() {
     setInterval(() => {
       this.animate(this.walkCycle);

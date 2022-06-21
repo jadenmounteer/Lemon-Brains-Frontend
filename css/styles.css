@@ -67,4 +67,11 @@ nav {
   max-height: 500px;
 }
 
+#gameOver {
+  text-align: center;
+  font-size: 5em;
+  display: none;
+  color: #accf77;
+}
+
 /*# sourceMappingURL=styles.css.map */

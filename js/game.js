@@ -3,7 +3,7 @@ import Zombie from './sprites/zombie.js';
 export default class Game {
   updateInterval;
   listOfZombies = [];
-  test = 'hello';
+
   constructor() {}
 
   create() {
@@ -51,6 +51,9 @@ export default class Game {
 
     // Stop the zombies from moving by removing their walking class
     this.pauseZombies();
+
+    // Show Game Over
+    document.getElementById('gameOver').style.display = 'block';
   }
 
   pauseZombies() {
