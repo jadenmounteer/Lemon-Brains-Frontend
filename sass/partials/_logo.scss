@@ -9,4 +9,10 @@
 
 .logo {
     font-size: 2em;
+    text-align: center;
+
+    @include breakpoint(medium) {
+        text-align: left;
+      }
+
 }

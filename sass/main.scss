@@ -6,9 +6,15 @@
     padding: 0;
 }
 
-html {
-    text-align: center;
-}
+
+/*** Variables ***/
+
+// Breakpoints
+$break-large: 1700px;
+$break-medium: 950px;
+$break-small: 510px;
+
+
 
 /**** FONTS  (Some fonts are imported directly in the index.html file ***/
 
@@ -16,5 +22,7 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 // Import the modularized Sass partials
+@import "partials/layout/layout";
 @import "partials/zombie";
 @import "partials/logo";
+

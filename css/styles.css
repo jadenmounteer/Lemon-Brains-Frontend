@@ -6,10 +6,7 @@
   padding: 0;
 }
 
-html {
-  text-align: center;
-}
-
+/*** Variables ***/
 /**** FONTS  (Some fonts are imported directly in the index.html file ***/
 /* Import Roboto font */
 .zombie {
@@ -39,6 +36,12 @@ html {
 
 .logo {
   font-size: 2em;
+  text-align: center;
+}
+@media (min-width: 950px) {
+  .logo {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
