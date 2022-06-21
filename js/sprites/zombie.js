@@ -26,24 +26,9 @@ export default class Zombie extends Sprite {
   }
 
   walkLeft() {
-    // once we hit the end of the cycle, start again
-    if (this.frameIndex === this.walkCycle.length) {
-      this.frameIndex = 0;
-    }
-    this.frame = this.walkCycle[this.frameIndex];
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.context.drawImage(
-      this.image,
-      this.frame.x,
-      this.frame.y,
-      this.SPRITE_WIDTH,
-      this.SPRITE_HEIGHT,
-      0,
-      0,
-      this.SPRITE_WIDTH,
-      this.SPRITE_HEIGHT
-    );
-    this.frameIndex += 1;
+    setInterval(() => {
+      this.animate(this.walkCycle);
+    }, 500);
   }
 
   spawn() {
