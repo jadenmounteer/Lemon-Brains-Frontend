@@ -35,4 +35,8 @@ export default class Zombie extends Sprite {
       this.animate(this.walkCycle);
     }, this.walkingSpeed);
   }
+
+  getXCoordinate() {
+    return this.canvas.getBoundingClientRect().x;
+  }
 }
