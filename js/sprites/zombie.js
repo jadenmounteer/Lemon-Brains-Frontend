@@ -19,6 +19,9 @@ export default class Zombie extends Sprite {
   walkCycle = [this.zombie0, this.zombie1];
   walkCycleLength = this.walkCycle.length;
 
+  // Speeds
+  walkingSpeed = 500;
+
   constructor() {
     super();
     this.image.src = this.spriteSheetURL;
@@ -28,7 +31,7 @@ export default class Zombie extends Sprite {
   walkLeft() {
     setInterval(() => {
       this.animate(this.walkCycle);
-    }, 500);
+    }, this.walkingSpeed);
   }
 
   spawn() {
