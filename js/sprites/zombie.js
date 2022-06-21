@@ -1,7 +1,7 @@
 import Sprite from './sprite.js';
 
 export default class Zombie extends Sprite {
-  SPRITE_WIDTH = 320;
+  SPRITE_WIDTH = 320; // The total width in px divided by the number of columns
   SPRITE_HEIGHT = 320; // The total height in px divided by the total rows
   BORDER_WIDTH = 1;
   SPACING_WIDTH = 1;
@@ -28,13 +28,10 @@ export default class Zombie extends Sprite {
     this.image.crossOrigin = true;
   }
 
+  // Will likely need to use clearInterval to destroy the zombies https://www.w3schools.com/jsref/met_win_clearinterval.asp
   walkLeft() {
     setInterval(() => {
       this.animate(this.walkCycle);
     }, this.walkingSpeed);
-  }
-
-  spawn() {
-    setInterval(this.walkLeft.bind(this), 500);
   }
 }
