@@ -1,0 +1,44 @@
+/*** Global Styles ***/
+/* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-align: center;
+}
+
+/**** FONTS  (Some fonts are imported directly in the index.html file ***/
+/* Import Roboto font */
+.zombie {
+  position: relative;
+  animation-name: zombie-walk;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+/*** ANIMATIONS ***/
+@keyframes zombie-walk {
+  0% {
+    left: 500px;
+  }
+  100% {
+    left: -500px;
+  }
+}
+.lemon {
+  font-family: "Roboto", sans-serif;
+}
+
+.brains {
+  font-family: "Creepster", cursive;
+  font-size: 1.3em;
+}
+
+.logo {
+  font-size: 2em;
+}
+
+/*# sourceMappingURL=styles.css.map */
