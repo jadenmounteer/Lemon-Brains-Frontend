@@ -67,6 +67,15 @@ nav {
   max-height: 500px;
 }
 
+#questions-header {
+  text-align: center;
+}
+
+.questions-div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #gameOver {
   text-align: center;
   font-size: 5em;
