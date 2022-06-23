@@ -59,6 +59,8 @@ export default class Quiz {
     } else {
       svgId = 'incorrect-svg';
     }
+
+    console.log('playing ' + svgId);
     this.playSvgAnimation(svgId);
   }
 
@@ -73,7 +75,7 @@ export default class Quiz {
 
   playSvgAnimation(svgId) {
     const svgImage = document.getElementById(svgId);
-    svgImage.style.display = 'block';
+    svgImage.style.display = 'inline';
 
     setTimeout(() => {
       svgImage.style.display = 'none';

@@ -74,6 +74,13 @@ nav {
 .questions-div {
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.input-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 svg {
@@ -111,6 +118,14 @@ p.success {
 }
 p.error {
   color: #D06079;
+}
+
+#correct-svg {
+  display: none;
+}
+
+#incorrect-svg {
+  display: none;
 }
 
 @-webkit-keyframes dash {
