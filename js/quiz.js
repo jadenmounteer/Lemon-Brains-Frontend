@@ -62,5 +62,10 @@ export default class Quiz {
 
   showAnswer(answer) {
     document.getElementById('show-answer').innerHTML = answer;
+    // TODO Set a quick timeout where it erases everything and gives you a new question
+    setTimeout(() => {
+      document.getElementById('show-answer').innerHTML = '';
+      this.createQuestion();
+    }, 1500);
   }
 }
