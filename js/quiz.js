@@ -34,11 +34,17 @@ export default class Quiz {
 
   createMinimum() {
     // TODO Create a minimum based on the difficulty
+    if (this.DIFFICULTY == 'easy') {
+      return 1;
+    }
     return 1;
   }
 
   createMaximum() {
     // TODO Create a maximum based on the difficulty
+    if (this.DIFFICULTY == 'easy') {
+      return 3;
+    }
     return 100;
   }
 
