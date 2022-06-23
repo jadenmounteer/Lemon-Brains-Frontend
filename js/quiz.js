@@ -59,7 +59,7 @@ export default class Quiz {
     } else {
       svgId = 'incorrect-svg';
     }
-
+    document.getElementById('answer').style.display = 'none';
     console.log('playing ' + svgId);
     this.playSvgAnimation(svgId);
   }
@@ -75,10 +75,11 @@ export default class Quiz {
 
   playSvgAnimation(svgId) {
     const svgImage = document.getElementById(svgId);
-    svgImage.style.display = 'inline';
+    svgImage.style.display = 'inline-block';
 
     setTimeout(() => {
       svgImage.style.display = 'none';
+      document.getElementById('answer').style.display = 'block';
     }, 1000);
   }
 }

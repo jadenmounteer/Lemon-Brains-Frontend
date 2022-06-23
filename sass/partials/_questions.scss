@@ -10,6 +10,20 @@
 
 .input-div {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 889px;
+    top: 192px;
+}
+
+#question {
+    margin-bottom: 50px;
+}
+button {
+    margin-top: 10px;
+}
+
+#answer {
+    // display: none;
 }

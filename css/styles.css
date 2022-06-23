@@ -79,14 +79,27 @@ nav {
 
 .input-div {
   display: flex;
-  align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 889px;
+  top: 192px;
+}
+
+#question {
+  margin-bottom: 50px;
+}
+
+button {
+  margin-top: 10px;
 }
 
 svg {
   width: 30px;
   display: block;
   margin: 40px auto 0;
+  position: relative;
+  top: -42px;
+  left: 45px;
 }
 
 .path {
