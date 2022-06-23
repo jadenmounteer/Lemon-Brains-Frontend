@@ -53,11 +53,13 @@ export default class Quiz {
 
   processUserInput(answer) {
     const userAnswer = document.getElementById('answer').value;
+    let svgId = '';
     if (userAnswer == answer) {
-      alert('You answered correctly');
+      svgId = 'correct-svg';
     } else {
-      alert('Wrong');
+      svgId = 'incorrect-svg';
     }
+    this.playSvgAnimation(svgId);
   }
 
   showAnswer(answer) {
@@ -67,5 +69,14 @@ export default class Quiz {
       document.getElementById('show-answer').innerHTML = '';
       this.createQuestion();
     }, 1500);
+  }
+
+  playSvgAnimation(svgId) {
+    const svgImage = document.getElementById(svgId);
+    svgImage.style.display = 'block';
+
+    setTimeout(() => {
+      svgImage.style.display = 'none';
+    }, 1000);
   }
 }
