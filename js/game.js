@@ -1,4 +1,5 @@
 import Zombie from './sprites/zombie.js';
+import Quiz from './quiz.js';
 
 export default class Game {
   updateInterval;
@@ -9,6 +10,11 @@ export default class Game {
   create() {
     // TODO Create settings object and initialize the settings
 
+    // Create the quiz
+    let quiz = new Quiz('easy');
+    quiz.createQuestion();
+
+    // Create the zombies
     var aZombie = new Zombie('.zombie');
     aZombie.image.onload = aZombie.walkLeft();
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
