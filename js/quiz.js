@@ -20,6 +20,16 @@ export default class Quiz {
     document.getElementById('submit-button').addEventListener('click', () => {
       this.processUserInput(answer);
     });
+
+    document.getElementById('submit-button').addEventListener('click', () => {
+      this.processUserInput(answer);
+    });
+
+    document
+      .getElementById('show-answer-button')
+      .addEventListener('click', () => {
+        this.showAnswer(answer);
+      });
   }
 
   createMinimum() {
@@ -48,5 +58,9 @@ export default class Quiz {
     } else {
       alert('Wrong');
     }
+  }
+
+  showAnswer(answer) {
+    document.getElementById('show-answer').innerHTML = answer;
   }
 }
