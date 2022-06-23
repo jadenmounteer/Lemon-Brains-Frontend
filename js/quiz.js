@@ -62,11 +62,14 @@ export default class Quiz {
     let svgId = '';
     if (userAnswer == answer) {
       svgId = 'correct-svg';
+      setTimeout(() => {
+        document.getElementById('answer').value = '';
+        this.createQuestion();
+      }, 1000);
     } else {
       svgId = 'incorrect-svg';
     }
     document.getElementById('answer').style.display = 'none';
-    console.log('playing ' + svgId);
     this.playSvgAnimation(svgId);
   }
 
