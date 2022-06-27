@@ -9,7 +9,10 @@ export default class ZombieFactory {
 
   createNewZombieName(listOfZombies) {
     const lastZombieCreated = listOfZombies[listOfZombies.length - 1];
-    const lastZombieName = lastZombieCreated.canvasQuery;
+    let lastZombieName = 'zombie1';
+    if (lastZombieCreated) {
+      lastZombieName = lastZombieCreated.canvasQuery;
+    }
     let numberOfLastZombie = lastZombieName.slice(7, lastZombieName.length);
     const numberOfNewZombie = Number(numberOfLastZombie) + 1;
     const nameOfNewZombie = '.zombie' + numberOfNewZombie;
@@ -53,17 +56,19 @@ export default class ZombieFactory {
 
   quenchZombie() {
     // Remove the first zombie in the list from the game
-    const zombieName = this.listOfZombies[0].canvasQuery;
-    const zombieNameWithoutPeriod = zombieName.slice(1, zombieName.length);
-    console.log(zombieNameWithoutPeriod);
-    const zombieToQuench = document.getElementsByClassName(
-      zombieNameWithoutPeriod
-    )[0];
+    if (this.listOfZombies.length >= 1) {
+      const zombieName = this.listOfZombies[0].canvasQuery;
+      const zombieNameWithoutPeriod = zombieName.slice(1, zombieName.length);
+      console.log(zombieNameWithoutPeriod);
+      const zombieToQuench = document.getElementsByClassName(
+        zombieNameWithoutPeriod
+      )[0];
 
-    // Remove the zombie from the html
-    zombieToQuench.remove();
-    // Remove the zombie from the list
-    this.listOfZombies.shift();
-    console.log(this.listOfZombies);
+      // Remove the zombie from the html
+      zombieToQuench.remove();
+      // Remove the zombie from the list
+      this.listOfZombies.shift();
+      console.log(this.listOfZombies);
+    }
   }
 }
