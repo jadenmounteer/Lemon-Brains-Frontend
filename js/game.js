@@ -38,19 +38,22 @@ export default class Game {
   }
 
   update() {
-    // TODO Loop through each of the zombies
+    // Check if game over
     this.listOfZombies.forEach((zombie) => {
       let zombiePosition = zombie.getXCoordinate();
-      // Check for game over
       if (zombiePosition < -70) {
         this.gameOver();
       }
     });
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
-
-    // If we spawn a zombie, call the zombie factory
-    this.zombieFactory.spawnZombie(this.listOfZombies);
+    const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
+    console.log(randomInt);
+    if (randomInt == 0) {
+      console.log('Spawning!');
+      // If we spawn a zombie, call the zombie factory
+      this.zombieFactory.spawnZombie(this.listOfZombies);
+    }
   }
   gameOver() {
     console.log('Game over');
