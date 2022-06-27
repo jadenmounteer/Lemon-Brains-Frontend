@@ -60,13 +60,15 @@ export default class Quiz {
   processUserInput(answer) {
     const userAnswer = document.getElementById('answer').value;
     if (userAnswer == answer) {
+      console.log('Correct!');
+      document.getElementById('answer').value = '';
       setTimeout(() => {
-        document.getElementById('answer').value = '';
         this.createQuestion();
       }, 1000);
     } else {
+      console.log('Incorrect!');
     }
-    document.getElementById('answer').style.display = 'none';
+    // document.getElementById('answer').style.display = 'none';
   }
 
   showAnswer(answer) {
