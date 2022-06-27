@@ -5,11 +5,12 @@ export default class Quiz {
     this.DIFFICULTY = difficulty;
   }
 
-  createQuestion() {
+  createQuestion(listOfZombies) {
     const minimum = this.createMinimum();
     const maximum = this.createMaximum();
     const int1 = this.generateInteger(minimum, maximum);
     const int2 = this.generateInteger(minimum, maximum);
+    console.log(listOfZombies);
 
     document.getElementById('question').innerHTML =
       int1 + ' ' + '+' + ' ' + int2;
@@ -18,13 +19,13 @@ export default class Quiz {
     const answer = this.createAnswer(int1, int2);
 
     document.getElementById('submit-button').addEventListener('click', () => {
-      this.processUserInput(answer);
+      this.processUserInput(answer, listOfZombies);
     });
 
     document
       .getElementById('show-answer-button')
       .addEventListener('click', () => {
-        this.showAnswer(answer);
+        this.showAnswer(answer, listOfZombies);
       });
   }
 
@@ -53,14 +54,14 @@ export default class Quiz {
     return int1 + int2;
   }
 
-  processUserInput(answer) {
+  processUserInput(answer, listOfZombies) {
     const userAnswer = document.getElementById('answer').value;
     if (userAnswer == answer) {
       console.log('correct!');
       document.getElementById('answer').value = '';
       document.getElementById('answer').classList.remove('answer-incorrect');
       document.getElementById('answer').classList.add('answer-correct');
-      this.createQuestion();
+      this.createQuestion(listOfZombies);
 
       // setTimeout(() => {
       //   this.createQuestion();
@@ -73,12 +74,12 @@ export default class Quiz {
     }
   }
 
-  showAnswer(answer) {
+  showAnswer(answer, listOfZombies) {
     document.getElementById('show-answer').innerHTML = answer;
     // TODO Set a quick timeout where it erases everything and gives you a new question
     setTimeout(() => {
       document.getElementById('show-answer').innerHTML = '';
-      this.createQuestion();
+      this.createQuestion(listOfZombies);
     }, 1500);
   }
 }

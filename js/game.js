@@ -16,7 +16,7 @@ export default class Game {
 
     // Create the quiz
     let quiz = new Quiz('easy');
-    quiz.createQuestion();
+    quiz.createQuestion(this.listOfZombies);
 
     // Create the zombies
     var aZombie = new Zombie('.zombie');
@@ -43,7 +43,6 @@ export default class Game {
     const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
     console.log(randomInt);
     if (randomInt == 0) {
-      console.log('Spawning!');
       // If we spawn a zombie, call the zombie factory
       this.zombieFactory.spawnZombie(this.listOfZombies);
     }
@@ -67,6 +66,4 @@ export default class Game {
       htmlElement.classList.remove('walking');
     });
   }
-
-  spawnZombie(listOfZombies) {}
 }
