@@ -39,8 +39,8 @@ export default class Quiz {
         return '-';
       case 2:
         return 'x';
-      case 3:
-        return '/';
+      // case 3:
+      //   return '/';
     }
   }
 
@@ -73,8 +73,8 @@ export default class Quiz {
         return int1 - int2;
       case 'x':
         return int1 * int2;
-      case '/':
-        return int1 / int2;
+      // case '/':
+      //   return int1 / int2;
     }
   }
 
