@@ -24,6 +24,18 @@ export default class Quiz {
     });
 
     document
+      .getElementById('answer')
+      .addEventListener('keypress', function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === 'Enter') {
+          // Cancel the default action, if needed
+          event.preventDefault();
+          // Trigger the button element with a click
+          document.getElementById('submit-button').click();
+        }
+      });
+
+    document
       .getElementById('show-answer-button')
       .addEventListener('click', () => {
         this.showAnswer(answer, zombieFactory);
@@ -89,12 +101,12 @@ export default class Quiz {
       document.getElementById('answer').classList.add('answer-correct');
       this.createQuestion(zombieFactory);
       zombieFactory.quenchZombie();
-      return;
     } else {
       console.log('incorrect!');
       document.getElementById('answer').classList.remove('answer-correct');
       document.getElementById('answer').classList.add('answer-incorrect');
     }
+    document.getElementById('answer').focus();
   }
 
   showAnswer(answer, zombieFactory) {
