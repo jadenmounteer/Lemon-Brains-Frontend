@@ -38,17 +38,14 @@ export default class Game {
   }
 
   update() {
-    console.log(this.listOfZombies);
     // TODO Loop through each of the zombies
-    console.log('updating');
-    let zombie = this.listOfZombies[0];
-    let zombiePosition = zombie.getXCoordinate();
-    // Check for game over
-    if (zombiePosition < -70) {
-      this.gameOver();
-    }
-
-    // END Loop
+    this.listOfZombies.forEach((zombie) => {
+      let zombiePosition = zombie.getXCoordinate();
+      // Check for game over
+      if (zombiePosition < -70) {
+        this.gameOver();
+      }
+    });
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
 
