@@ -24,13 +24,6 @@ export default class Game {
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
     this.listOfZombies.push(aZombie);
 
-    document.getElementsByTagName('body')[0].addEventListener('click', () => {
-      let zombie = document.getElementsByClassName('zombie1')[0];
-      var rect = zombie.getBoundingClientRect();
-      console.log(rect);
-      // I need to end the game when the x attribute of rect is < -70
-    });
-
     // Set the update interval
     this.updateInterval = setInterval(() => {
       this.update();
