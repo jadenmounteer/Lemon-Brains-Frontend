@@ -16,10 +16,10 @@ export default class Game {
 
     // Create the quiz
     let quiz = new Quiz('easy');
-    quiz.createQuestion(this.zombieFactory.listOfZombies);
+    quiz.createQuestion(this.zombieFactory);
 
     // Create the zombies
-    var aZombie = new Zombie('.zombie');
+    var aZombie = new Zombie('.zombie1');
     aZombie.image.onload = aZombie.walkLeft();
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
     this.zombieFactory.listOfZombies.push(aZombie);

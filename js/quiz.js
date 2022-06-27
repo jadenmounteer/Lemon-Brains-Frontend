@@ -5,7 +5,7 @@ export default class Quiz {
     this.DIFFICULTY = difficulty;
   }
 
-  createQuestion(listOfZombies) {
+  createQuestion(zombieFactory) {
     const minimum = this.createMinimum();
     const maximum = this.createMaximum();
     const int1 = this.generateInteger(minimum, maximum);
@@ -18,13 +18,13 @@ export default class Quiz {
     const answer = this.createAnswer(int1, int2);
 
     document.getElementById('submit-button').addEventListener('click', () => {
-      this.processUserInput(answer, listOfZombies);
+      this.processUserInput(answer, zombieFactory);
     });
 
     document
       .getElementById('show-answer-button')
       .addEventListener('click', () => {
-        this.showAnswer(answer, listOfZombies);
+        this.showAnswer(answer, zombieFactory);
       });
   }
 
@@ -53,18 +53,15 @@ export default class Quiz {
     return int1 + int2;
   }
 
-  processUserInput(answer, listOfZombies) {
+  processUserInput(answer, zombieFactory) {
     const userAnswer = document.getElementById('answer').value;
     if (userAnswer == answer) {
       console.log('correct!');
       document.getElementById('answer').value = '';
       document.getElementById('answer').classList.remove('answer-incorrect');
       document.getElementById('answer').classList.add('answer-correct');
-      this.createQuestion(listOfZombies);
-
-      // setTimeout(() => {
-      //   this.createQuestion();
-      // }, 500);
+      this.createQuestion(zombieFactory);
+      zombieFactory.quenchZombie();
       return;
     } else {
       console.log('incorrect!');
@@ -73,12 +70,12 @@ export default class Quiz {
     }
   }
 
-  showAnswer(answer, listOfZombies) {
+  showAnswer(answer, zombieFactory) {
     document.getElementById('show-answer').innerHTML = answer;
     // TODO Set a quick timeout where it erases everything and gives you a new question
     setTimeout(() => {
       document.getElementById('show-answer').innerHTML = '';
-      this.createQuestion(listOfZombies);
+      this.createQuestion(zombieFactory);
     }, 1500);
   }
 }
