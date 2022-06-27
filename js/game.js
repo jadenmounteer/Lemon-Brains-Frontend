@@ -1,11 +1,15 @@
 import Zombie from './sprites/zombie.js';
 import Quiz from './quiz.js';
+import ZombieFactory from './zombieFactory.js';
 
 export default class Game {
   updateInterval;
   listOfZombies = [];
+  zombieFactory;
 
-  constructor() {}
+  constructor() {
+    this.zombieFactory = new ZombieFactory();
+  }
 
   create() {
     // TODO Create settings object and initialize the settings
@@ -56,8 +60,9 @@ export default class Game {
     // END Loop
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
+    this.zombieFactory.createNewZombieName(this.listOfZombies);
 
-    // If we span a zombie, call the zombie factory
+    // If we spawn a zombie, call the zombie factory
   }
   gameOver() {
     console.log('Game over');

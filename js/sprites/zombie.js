@@ -12,6 +12,7 @@ export default class Zombie extends Sprite {
   frameIndex = 0;
   frame;
   image = new Image();
+  canvasQuery;
 
   // Animations
   zombie0 = this.spritePositionToImagePosition(0, 0);
@@ -27,6 +28,7 @@ export default class Zombie extends Sprite {
     this.context = this.canvas.getContext('2d');
     this.image.src = this.spriteSheetURL;
     this.image.crossOrigin = true;
+    this.canvasQuery = canvasQuery;
   }
 
   walkLeft() {
