@@ -24,16 +24,6 @@ export default class Game {
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
     this.listOfZombies.push(aZombie);
 
-    // add a 2nd zombie
-    setTimeout(() => {
-      var aNewZombie = new Zombie('.zombie2');
-      console.log('spawning new zombie');
-
-      aNewZombie.image.onload = aNewZombie.walkLeft();
-      document.getElementsByClassName('zombie2')[0].classList.add('walking');
-      this.listOfZombies.push(aNewZombie);
-    }, 1000);
-
     document.getElementsByTagName('body')[0].addEventListener('click', () => {
       let zombie = document.getElementsByClassName('zombie1')[0];
       var rect = zombie.getBoundingClientRect();
