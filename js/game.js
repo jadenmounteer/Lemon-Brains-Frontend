@@ -48,6 +48,7 @@ export default class Game {
   }
 
   update() {
+    console.log(this.listOfZombies);
     // TODO Loop through each of the zombies
     console.log('updating');
     let zombie = this.listOfZombies[0];
@@ -60,9 +61,9 @@ export default class Game {
     // END Loop
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
-    this.zombieFactory.createNewZombieName(this.listOfZombies);
 
     // If we spawn a zombie, call the zombie factory
+    this.zombieFactory.spawnZombie(this.listOfZombies);
   }
   gameOver() {
     console.log('Game over');
@@ -83,4 +84,6 @@ export default class Game {
       htmlElement.classList.remove('walking');
     });
   }
+
+  spawnZombie(listOfZombies) {}
 }
