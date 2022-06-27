@@ -1,6 +1,8 @@
 import Zombie from './sprites/zombie.js';
 
 export default class ZombieFactory {
+  listOfZombies = [];
+
   createZombie(newZombieName) {
     return new Zombie(newZombieName);
   }

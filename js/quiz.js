@@ -10,7 +10,6 @@ export default class Quiz {
     const maximum = this.createMaximum();
     const int1 = this.generateInteger(minimum, maximum);
     const int2 = this.generateInteger(minimum, maximum);
-    console.log(listOfZombies);
 
     document.getElementById('question').innerHTML =
       int1 + ' ' + '+' + ' ' + int2;

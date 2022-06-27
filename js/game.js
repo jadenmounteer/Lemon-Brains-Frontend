@@ -4,7 +4,7 @@ import ZombieFactory from './zombieFactory.js';
 
 export default class Game {
   updateInterval;
-  listOfZombies = [];
+  // listOfZombies = [];
   zombieFactory;
 
   constructor() {
@@ -16,13 +16,13 @@ export default class Game {
 
     // Create the quiz
     let quiz = new Quiz('easy');
-    quiz.createQuestion(this.listOfZombies);
+    quiz.createQuestion(this.zombieFactory.listOfZombies);
 
     // Create the zombies
     var aZombie = new Zombie('.zombie');
     aZombie.image.onload = aZombie.walkLeft();
     document.getElementsByClassName('zombie1')[0].classList.add('walking');
-    this.listOfZombies.push(aZombie);
+    this.zombieFactory.listOfZombies.push(aZombie);
 
     // Set the update interval
     this.updateInterval = setInterval(() => {
@@ -32,7 +32,7 @@ export default class Game {
 
   update() {
     // Check if game over
-    this.listOfZombies.forEach((zombie) => {
+    this.zombieFactory.listOfZombies.forEach((zombie) => {
       let zombiePosition = zombie.getXCoordinate();
       if (zombiePosition < -70) {
         this.gameOver();
@@ -41,10 +41,9 @@ export default class Game {
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
     const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
-    console.log(randomInt);
     if (randomInt == 0) {
       // If we spawn a zombie, call the zombie factory
-      this.zombieFactory.spawnZombie(this.listOfZombies);
+      this.zombieFactory.spawnZombie(this.zombieFactory.listOfZombies);
     }
   }
   gameOver() {
@@ -61,7 +60,7 @@ export default class Game {
   }
 
   pauseZombies() {
-    this.listOfZombies.forEach((zombie) => {
+    this.zombieFactory.listOfZombies.forEach((zombie) => {
       let htmlElement = zombie.canvas;
       htmlElement.classList.remove('walking');
     });
