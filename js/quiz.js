@@ -11,11 +11,13 @@ export default class Quiz {
     const int1 = this.generateInteger(minimum, maximum);
     const int2 = this.generateInteger(minimum, maximum);
 
+    const operator = this.createOperator();
+
     document.getElementById('question').innerHTML =
-      int1 + ' ' + '+' + ' ' + int2;
+      int1 + ' ' + operator + ' ' + int2;
 
     // TODO Input the operation. Maybe randomize it
-    const answer = this.createAnswer(int1, int2);
+    const answer = this.createAnswer(int1, int2, operator);
 
     document.getElementById('submit-button').addEventListener('click', () => {
       this.processUserInput(answer, zombieFactory);
@@ -26,6 +28,20 @@ export default class Quiz {
       .addEventListener('click', () => {
         this.showAnswer(answer, zombieFactory);
       });
+  }
+
+  createOperator() {
+    const randomInt = Math.floor(Math.random() * 4);
+    switch (randomInt) {
+      case 0:
+        return '+';
+      case 1:
+        return '-';
+      case 2:
+        return 'x';
+      case 3:
+        return '/';
+    }
   }
 
   createMinimum() {
@@ -48,9 +64,18 @@ export default class Quiz {
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   }
 
-  createAnswer(int1, int2, operation = 'addition') {
+  createAnswer(int1, int2, operator) {
     // TODO Change the answer based on the opperation
-    return int1 + int2;
+    switch (operator) {
+      case '+':
+        return int1 + int2;
+      case '-':
+        return int1 - int2;
+      case 'x':
+        return int1 * int2;
+      case '/':
+        return int1 / int2;
+    }
   }
 
   processUserInput(answer, zombieFactory) {
