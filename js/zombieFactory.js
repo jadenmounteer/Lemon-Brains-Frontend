@@ -59,11 +59,11 @@ export default class ZombieFactory {
     const zombieToQuench = document.getElementsByClassName(
       zombieNameWithoutPeriod
     )[0];
-    console.log(`Quenching ${zombieToQuench}`);
 
     // Remove the zombie from the html
     zombieToQuench.remove();
     // Remove the zombie from the list
-    this.listOfZombies = this.listOfZombies.shift();
+    this.listOfZombies.shift();
+    console.log(this.listOfZombies);
   }
 }
