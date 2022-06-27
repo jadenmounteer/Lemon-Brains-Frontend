@@ -9,12 +9,7 @@
 }
 
 .input-div {
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 889px;
-    top: 192px;
+    
 }
 
 #question {
@@ -25,5 +20,12 @@ button {
 }
 
 #answer {
-    // display: none;
+}
+
+.answer-correct {
+    border: 1px solid green;
+}
+
+.answer-incorrect {
+    border: 1px solid red;
 }

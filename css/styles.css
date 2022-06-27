@@ -77,20 +77,20 @@ nav {
   text-align: center;
 }
 
-.input-div {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 889px;
-  top: 192px;
-}
-
 #question {
   margin-bottom: 50px;
 }
 
 button {
   margin-top: 10px;
+}
+
+.answer-correct {
+  border: 1px solid green;
+}
+
+.answer-incorrect {
+  border: 1px solid red;
 }
 
 #gameOver {

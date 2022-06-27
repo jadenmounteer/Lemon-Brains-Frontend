@@ -21,10 +21,6 @@ export default class Quiz {
       this.processUserInput(answer);
     });
 
-    document.getElementById('submit-button').addEventListener('click', () => {
-      this.processUserInput(answer);
-    });
-
     document
       .getElementById('show-answer-button')
       .addEventListener('click', () => {
@@ -60,15 +56,21 @@ export default class Quiz {
   processUserInput(answer) {
     const userAnswer = document.getElementById('answer').value;
     if (userAnswer == answer) {
-      console.log('Correct!');
+      console.log('correct!');
       document.getElementById('answer').value = '';
-      setTimeout(() => {
-        this.createQuestion();
-      }, 1000);
+      document.getElementById('answer').classList.remove('answer-incorrect');
+      document.getElementById('answer').classList.add('answer-correct');
+      this.createQuestion();
+
+      // setTimeout(() => {
+      //   this.createQuestion();
+      // }, 500);
+      return;
     } else {
-      console.log('Incorrect!');
+      console.log('incorrect!');
+      document.getElementById('answer').classList.remove('answer-correct');
+      document.getElementById('answer').classList.add('answer-incorrect');
     }
-    // document.getElementById('answer').style.display = 'none';
   }
 
   showAnswer(answer) {
