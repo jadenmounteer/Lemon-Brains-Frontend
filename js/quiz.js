@@ -31,7 +31,7 @@ export default class Quiz {
   }
 
   createOperator() {
-    const randomInt = Math.floor(Math.random() * 4);
+    const randomInt = Math.floor(Math.random() * 3);
     switch (randomInt) {
       case 0:
         return '+';
@@ -54,8 +54,10 @@ export default class Quiz {
 
   createMaximum() {
     // TODO Create a maximum based on the difficulty
-    if (this.DIFFICULTY == 'easy') {
+    if (this.DIFFICULTY == 'very easy') {
       return 3;
+    } else if (this.DIFFICULTY == 'medium') {
+      return 5;
     }
     return 100;
   }
