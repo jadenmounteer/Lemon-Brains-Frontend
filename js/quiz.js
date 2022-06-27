@@ -59,18 +59,14 @@ export default class Quiz {
 
   processUserInput(answer) {
     const userAnswer = document.getElementById('answer').value;
-    let svgId = '';
     if (userAnswer == answer) {
-      svgId = 'correct-svg';
       setTimeout(() => {
         document.getElementById('answer').value = '';
         this.createQuestion();
       }, 1000);
     } else {
-      svgId = 'incorrect-svg';
     }
     document.getElementById('answer').style.display = 'none';
-    this.playSvgAnimation(svgId);
   }
 
   showAnswer(answer) {
@@ -80,15 +76,5 @@ export default class Quiz {
       document.getElementById('show-answer').innerHTML = '';
       this.createQuestion();
     }, 1500);
-  }
-
-  playSvgAnimation(svgId) {
-    const svgImage = document.getElementById(svgId);
-    svgImage.style.display = 'inline-block';
-
-    setTimeout(() => {
-      svgImage.style.display = 'none';
-      document.getElementById('answer').style.display = 'block';
-    }, 1000);
   }
 }
