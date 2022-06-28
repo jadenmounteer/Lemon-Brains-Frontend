@@ -68,8 +68,10 @@ export default class Quiz {
     // TODO Create a maximum based on the difficulty
     if (this.DIFFICULTY == 'very easy') {
       return 3;
-    } else if (this.DIFFICULTY == 'medium') {
+    } else if (this.DIFFICULTY == 'easy') {
       return 5;
+    } else if (this.DIFFICULTY == 'medium') {
+      return 10;
     }
     return 100;
   }
