@@ -56,7 +56,7 @@ export default class Game {
     this.pauseZombies();
 
     // Show Game Over
-    document.getElementById('gameOver').style.display = 'block';
+    document.getElementById('game-over-div').style.display = 'block';
   }
 
   pauseZombies() {
@@ -66,5 +66,7 @@ export default class Game {
     });
   }
 
-  tryAgain() {}
+  tryAgain() {
+    location.reload();
+  }
 }

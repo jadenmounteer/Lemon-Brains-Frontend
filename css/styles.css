@@ -130,12 +130,12 @@ html {
 }
 
 .game-over-div {
+  display: none;
   text-align: center;
 }
 
 #gameOver {
   font-size: 5em;
-  display: none;
   color: #accf77;
 }
 

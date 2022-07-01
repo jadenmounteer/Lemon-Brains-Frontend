@@ -4,6 +4,6 @@ const game = new Game();
 
 game.create();
 
-document.getElementById('try-again-button').addEventListener('click', () => {
+document.getElementById('try-again').addEventListener('click', () => {
   game.tryAgain();
 });
