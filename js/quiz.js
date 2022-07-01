@@ -112,10 +112,10 @@ export default class Quiz {
   }
 
   showAnswer(answer, zombieFactory) {
-    document.getElementById('show-answer').innerHTML = answer;
+    document.getElementById('answer').value = answer;
     // TODO Set a quick timeout where it erases everything and gives you a new question
     setTimeout(() => {
-      document.getElementById('show-answer').innerHTML = '';
+      document.getElementById('answer').value = '';
       this.createQuestion(zombieFactory);
     }, 1500);
   }
