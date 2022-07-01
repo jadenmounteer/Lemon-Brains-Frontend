@@ -69,12 +69,16 @@ nav {
 
 #questions-header {
   text-align: center;
+  margin-top: 10px;
 }
 
 .questions-div {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 #question {
@@ -98,6 +102,10 @@ button {
 
 .answer-incorrect {
   border: 1px solid red;
+}
+
+.buttons-div {
+  text-align: center;
 }
 
 #gameOver {
