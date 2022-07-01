@@ -13,13 +13,19 @@
 }
 
 #question {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+
 }
+
 button {
     margin-top: 10px;
 }
 
 #answer {
+    padding: 10px;
 }
 
 .answer-correct {
