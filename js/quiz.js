@@ -14,7 +14,7 @@ export default class Quiz {
     const operator = this.createOperator();
 
     document.getElementById('question').innerHTML =
-      int1 + ' ' + operator + ' ' + int2;
+      int1 + ' ' + operator + ' ' + int2 + ' = ';
 
     // TODO Input the operation. Maybe randomize it
     const answer = this.createAnswer(int1, int2, operator);
