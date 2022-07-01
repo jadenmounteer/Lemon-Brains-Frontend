@@ -40,8 +40,10 @@ html {
     background-color: $nav-color;
 }
 
-#gameOver {
+.game-over-div {
     text-align: center;
+}
+#gameOver {
     font-size: 5em;
     display: none;
     color: $zombieGreen;

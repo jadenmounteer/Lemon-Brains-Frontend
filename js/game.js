@@ -65,4 +65,6 @@ export default class Game {
       htmlElement.classList.remove('walking');
     });
   }
+
+  tryAgain() {}
 }

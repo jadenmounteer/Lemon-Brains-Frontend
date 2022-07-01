@@ -129,8 +129,11 @@ html {
   background-color: #CA7D53;
 }
 
-#gameOver {
+.game-over-div {
   text-align: center;
+}
+
+#gameOver {
   font-size: 5em;
   display: none;
   color: #accf77;
