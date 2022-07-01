@@ -7,8 +7,11 @@
 }
 
 
+
+
 /*** Variables ***/
 $zombieGreen:#accf77;
+$nav-color: #CA7D53;
 
 // Breakpoints
 $break-large: 1700px;
@@ -28,7 +31,11 @@ $break-small: 510px;
 @import "partials/logo";
 @import "partials/nav";
 @import "partials/questions.scss";
+@import "partials/playing-field";
 
+html {
+    background-color: $nav-color;
+}
 
 #gameOver {
     text-align: center;

@@ -58,7 +58,6 @@
 }
 
 nav {
-  background-color: #CA7D53;
   color: white;
 }
 
@@ -108,6 +107,16 @@ button {
 
 .buttons-div {
   text-align: center;
+}
+
+.game-content {
+  background-color: rgb(240, 236, 236);
+  width: 100%;
+  height: 500px;
+}
+
+html {
+  background-color: #CA7D53;
 }
 
 #gameOver {
