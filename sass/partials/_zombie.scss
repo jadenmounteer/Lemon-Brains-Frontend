@@ -1,3 +1,7 @@
+$fast: 20s;
+$normal: 35s;
+$slow: 40s;
+
 .zombie {
     width: 500px;
     height: 500px;
@@ -7,7 +11,7 @@
 
 .walking {
     animation-name: zombie-walk;
-    animation-duration: 20s;
+    animation-duration: $normal;
     animation-iteration-count: infinite;
 }
 
