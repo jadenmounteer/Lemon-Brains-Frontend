@@ -72,9 +72,15 @@ nav {
   padding-top: 20px;
 }
 
+.menu-buttons {
+  margin-bottom: 150px;
+  text-align: center;
+}
+
 .quiz {
   background-color: #87CEEB;
   margin-bottom: 150px;
+  display: none;
 }
 
 .questions-div {
@@ -172,6 +178,14 @@ html {
 
 input:focus {
   outline: none !important;
+}
+
+.logo {
+  width: 350px;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

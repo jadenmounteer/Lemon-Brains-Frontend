@@ -14,11 +14,16 @@ export default class Game {
 
   create() {
     // TODO Create settings object and initialize the settings
+    // Hide the main menu
+    document.getElementById('menu-buttons').style.display = 'none';
 
     // Create the lemonade stand
     var lemonadeStand = new LemonadeStand();
 
     lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
+
+    // Show the quiz
+    document.getElementById('quiz').style.display = 'block';
 
     // Create the quiz
     let quiz = new Quiz('hard', this.zombieFactory);

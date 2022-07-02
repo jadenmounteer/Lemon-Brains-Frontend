@@ -64,3 +64,10 @@ html {
 input:focus {
     outline: none !important;
 }
+
+.logo {
+    width: 350px;
+}
+.logo:hover {
+    cursor: pointer;
+}

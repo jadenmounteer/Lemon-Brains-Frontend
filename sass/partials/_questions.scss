@@ -5,9 +5,16 @@
 
 }
 
+.menu-buttons {
+    margin-bottom: 150px;
+    text-align: center;
+
+}
+
 .quiz {
     background-color: $sky-color;
     margin-bottom: 150px;
+    display: none;
 }
 
 .questions-div {

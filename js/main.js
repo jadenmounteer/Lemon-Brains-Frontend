@@ -1,9 +1,15 @@
 import Game from './game.js';
 
-const game = new Game();
+function main() {
+  const game = new Game();
 
-game.create();
+  document.getElementById('start-game-button').addEventListener('click', () => {
+    game.create();
+  });
 
-document.getElementById('try-again').addEventListener('click', () => {
-  game.tryAgain();
-});
+  document.getElementById('try-again').addEventListener('click', () => {
+    game.tryAgain();
+  });
+}
+
+main();
