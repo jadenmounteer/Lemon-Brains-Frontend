@@ -47,13 +47,13 @@ export default class Game {
     }
   }
   gameOver() {
-    console.log('Game over');
-
     // Clear the update interval
     clearInterval(this.updateInterval);
 
     // Stop the zombies from moving by removing their walking class
     this.pauseZombies();
+
+    document.getElementById('quiz').style.display = 'none';
 
     // Show Game Over
     document.getElementById('game-over-div').style.display = 'block';

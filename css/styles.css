@@ -69,7 +69,7 @@ nav {
 #questions-header {
   text-align: center;
   margin-top: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .quiz {
@@ -153,6 +153,11 @@ html {
 #gameOver {
   font-size: 5em;
   color: rgba(126, 252, 0, 0.7725490196);
+  padding-top: 20px;
+}
+
+#try-again {
+  margin-bottom: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */
