@@ -17,7 +17,7 @@
 
 .walking {
   animation-name: zombie-walk;
-  animation-duration: 35s;
+  animation-duration: 45s;
   animation-iteration-count: infinite;
 }
 
