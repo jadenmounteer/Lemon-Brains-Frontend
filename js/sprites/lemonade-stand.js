@@ -15,12 +15,20 @@ export default class LemonadeStand extends Sprite {
   canvasQuery;
 
   // Animations
-  zombie0 = this.spritePositionToImagePosition(0, 0);
-  zombie1 = this.spritePositionToImagePosition(0, 1);
-  walkCycle = [this.zombie0, this.zombie1];
+  openEyes = this.spritePositionToImagePosition(0, 0);
+  closeEyes = this.spritePositionToImagePosition(0, 1);
+  blink = [
+    this.openEyes,
+    this.openEyes,
+    this.openEyes,
+    this.openEyes,
+    this.openEyes,
+    this.openEyes,
+    this.closeEyes,
+  ];
 
   // Speeds
-  walkingSpeed = 500;
+  animationSpeed = 500;
 
   constructor() {
     super();
@@ -31,10 +39,10 @@ export default class LemonadeStand extends Sprite {
     this.image.crossOrigin = true;
   }
 
-  walkLeft() {
+  blinkAnimation() {
     setInterval(() => {
-      this.animate(this.walkCycle);
-    }, this.walkingSpeed);
+      this.animate(this.blink);
+    }, this.animationSpeed);
   }
 
   getXCoordinate() {

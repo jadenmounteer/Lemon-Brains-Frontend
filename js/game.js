@@ -22,7 +22,7 @@ export default class Game {
     // Create the lemonade stand
     var lemonadeStand = new LemonadeStand();
 
-    lemonadeStand.image.onload = lemonadeStand.walkLeft();
+    lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
 
     // Create the zombies
     var aZombie = new Zombie('.zombie1');
