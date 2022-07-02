@@ -1,22 +1,8 @@
 export default class Quiz {
   DIFFICULTY = 'easy';
 
-  constructor(difficulty) {
+  constructor(difficulty, zombieFactory) {
     this.DIFFICULTY = difficulty;
-  }
-
-  createQuestion(zombieFactory) {
-    const minimum = this.createMinimum();
-    const maximum = this.createMaximum();
-    const int1 = this.generateInteger(minimum, maximum);
-    const int2 = this.generateInteger(minimum, maximum);
-
-    const operator = this.createOperator();
-
-    // Render the question
-    document.getElementById('int1').innerHTML = int1;
-    document.getElementById('operator').innerHTML = operator;
-    document.getElementById('int2').innerHTML = int2;
 
     document.getElementById('submit-button').addEventListener('click', () => {
       this.processUserInput(zombieFactory);
@@ -39,6 +25,20 @@ export default class Quiz {
       .addEventListener('click', () => {
         this.showAnswer(zombieFactory);
       });
+  }
+
+  createQuestion() {
+    const minimum = this.createMinimum();
+    const maximum = this.createMaximum();
+    const int1 = this.generateInteger(minimum, maximum);
+    const int2 = this.generateInteger(minimum, maximum);
+
+    const operator = this.createOperator();
+
+    // Render the question
+    document.getElementById('int1').innerHTML = int1;
+    document.getElementById('operator').innerHTML = operator;
+    document.getElementById('int2').innerHTML = int2;
   }
 
   createOperator() {
@@ -88,6 +88,7 @@ export default class Quiz {
   }
 
   createAnswer(int1, int2, operator) {
+    console.log(`Creating answer. The operator is ${operator}`);
     // TODO Change the answer based on the opperation
     switch (operator) {
       case '+':
@@ -106,6 +107,7 @@ export default class Quiz {
 
     // Generate the answer
     let answer = this.generateAnswer();
+    console.log(`The answer is ${answer}. You answered ${userAnswer}`);
 
     if (userAnswer == answer) {
       console.log('correct!');
