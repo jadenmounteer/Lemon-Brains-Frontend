@@ -1,6 +1,7 @@
 import Zombie from './sprites/zombie.js';
 import Quiz from './quiz.js';
 import ZombieFactory from './zombieFactory.js';
+import LemonadeStand from './sprites/lemonade-stand.js';
 
 export default class Game {
   updateInterval;
@@ -17,6 +18,11 @@ export default class Game {
     // Create the quiz
     let quiz = new Quiz('easy', this.zombieFactory);
     quiz.createQuestion();
+
+    // Create the lemonade stand
+    var lemonadeStand = new LemonadeStand();
+
+    lemonadeStand.image.onload = lemonadeStand.walkLeft();
 
     // Create the zombies
     var aZombie = new Zombie('.zombie1');
