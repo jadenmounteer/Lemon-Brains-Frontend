@@ -15,7 +15,7 @@ export default class Game {
     // TODO Create settings object and initialize the settings
 
     // Create the quiz
-    let quiz = new Quiz('medium');
+    let quiz = new Quiz('easy');
     quiz.createQuestion(this.zombieFactory);
 
     // Create the zombies

@@ -18,9 +18,6 @@ export default class Quiz {
     document.getElementById('operator').innerHTML = operator;
     document.getElementById('int2').innerHTML = int2;
 
-    // TODO Input the operation. Maybe randomize it
-    const answer = this.createAnswer(int1, int2, operator);
-
     document.getElementById('submit-button').addEventListener('click', () => {
       this.processUserInput(zombieFactory);
     });
@@ -40,7 +37,7 @@ export default class Quiz {
     document
       .getElementById('show-answer-button')
       .addEventListener('click', () => {
-        this.showAnswer(answer, zombieFactory);
+        this.showAnswer(zombieFactory);
       });
   }
 
@@ -82,6 +79,14 @@ export default class Quiz {
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   }
 
+  generateAnswer() {
+    // Generate the answer
+    let int1 = document.getElementById('int1').innerHTML;
+    let operator = document.getElementById('operator').innerHTML;
+    let int2 = document.getElementById('int2').innerHTML;
+    return this.createAnswer(int1, int2, operator);
+  }
+
   createAnswer(int1, int2, operator) {
     // TODO Change the answer based on the opperation
     switch (operator) {
@@ -100,10 +105,7 @@ export default class Quiz {
     const userAnswer = document.getElementById('answer').value;
 
     // Generate the answer
-    let int1 = document.getElementById('int1').innerHTML;
-    let operator = document.getElementById('operator').innerHTML;
-    let int2 = document.getElementById('int2').innerHTML;
-    let answer = this.createAnswer(int1, int2, operator);
+    let answer = this.generateAnswer();
 
     if (userAnswer == answer) {
       console.log('correct!');
@@ -120,7 +122,8 @@ export default class Quiz {
     document.getElementById('answer').focus();
   }
 
-  showAnswer(answer, zombieFactory) {
+  showAnswer(zombieFactory) {
+    let answer = this.generateAnswer();
     document.getElementById('answer').value = answer;
     // TODO Set a quick timeout where it erases everything and gives you a new question
     setTimeout(() => {

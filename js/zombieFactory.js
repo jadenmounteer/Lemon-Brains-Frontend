@@ -59,7 +59,6 @@ export default class ZombieFactory {
     if (this.listOfZombies.length >= 1) {
       const zombieName = this.listOfZombies[0].canvasQuery;
       const zombieNameWithoutPeriod = zombieName.slice(1, zombieName.length);
-      console.log(zombieNameWithoutPeriod);
       const zombieToQuench = document.getElementsByClassName(
         zombieNameWithoutPeriod
       )[0];
@@ -68,7 +67,6 @@ export default class ZombieFactory {
       zombieToQuench.remove();
       // Remove the zombie from the list
       this.listOfZombies.shift();
-      console.log(this.listOfZombies);
     }
   }
 }
