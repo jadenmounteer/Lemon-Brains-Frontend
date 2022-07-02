@@ -26,7 +26,7 @@ export default class Game {
     document.getElementById('quiz').style.display = 'block';
 
     // Create the quiz
-    let quiz = new Quiz('hard', this.zombieFactory);
+    let quiz = new Quiz('easy', this.zombieFactory);
     quiz.createQuestion();
 
     // Create the zombies
