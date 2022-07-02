@@ -11,11 +11,14 @@
 
 /*** Variables ***/
 $zombieGreen:#accf77;
-$nav-color: #CA7D53;
+// $nav-color: #CA7D53;
 $wood-color: #855E42;
+$nav-color: $wood-color;
+
 $light-wood-color: #ac7954;
 $lemon-color: #edff00;
-$sky-color: rgb(240, 236, 236);
+$sky-color: #87CEEB;
+$grass-color: #7efc00c5;
 
 // Breakpoints
 $break-large: 1700px;
@@ -48,5 +51,5 @@ html {
 
 #gameOver {
     font-size: 5em;
-    color: $zombieGreen;
+    color: $grass-color;
 }

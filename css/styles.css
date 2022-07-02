@@ -73,7 +73,8 @@ nav {
 }
 
 .quiz {
-  background-color: rgb(240, 236, 236);
+  background-color: #87CEEB;
+  margin-bottom: 100px;
 }
 
 .questions-div {
@@ -125,13 +126,23 @@ button:hover {
 }
 
 .game-content {
-  background-color: rgb(240, 236, 236);
+  background-color: #87CEEB;
+  width: 100%;
+}
+
+.sky {
+  background-color: #87CEEB;
+  height: 200px;
+}
+
+.ground {
+  background-color: rgba(126, 252, 0, 0.7725490196);
   width: 100%;
   height: 500px;
 }
 
 html {
-  background-color: #CA7D53;
+  background-color: #855E42;
 }
 
 .game-over-div {
@@ -141,7 +152,7 @@ html {
 
 #gameOver {
   font-size: 5em;
-  color: #accf77;
+  color: rgba(126, 252, 0, 0.7725490196);
 }
 
 /*# sourceMappingURL=styles.css.map */

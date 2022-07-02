@@ -1,7 +1,16 @@
 
-
 .game-content {
     background-color: $sky-color;
+    width: 100%;
+    //height: 500px;
+}
+
+.sky {
+    background-color: $sky-color;
+    height: 200px;
+}
+.ground {
+    background-color: $grass-color;
     width: 100%;
     height: 500px;
 }
