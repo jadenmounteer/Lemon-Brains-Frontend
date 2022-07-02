@@ -71,6 +71,10 @@ export default class Quiz {
       return 5;
     } else if (this.DIFFICULTY == 'medium') {
       return 10;
+    } else if (this.DIFFICULTY == 'hard') {
+      return 15;
+    } else if (this.DIFFICULTY == 'extreme') {
+      return 20;
     }
     return 100;
   }

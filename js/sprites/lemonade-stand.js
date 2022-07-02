@@ -1,8 +1,8 @@
 import Sprite from './sprite.js';
 
 export default class LemonadeStand extends Sprite {
-  SPRITE_WIDTH = 224; // The total width in px divided by the number of columns
-  SPRITE_HEIGHT = 224; // The total height in px divided by the total rows
+  SPRITE_WIDTH = 320; // The total width in px divided by the number of columns
+  SPRITE_HEIGHT = 320; // The total height in px divided by the total rows
   BORDER_WIDTH = 1;
   SPACING_WIDTH = 1;
   canvas;

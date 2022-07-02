@@ -15,14 +15,14 @@ export default class Game {
   create() {
     // TODO Create settings object and initialize the settings
 
-    // Create the quiz
-    let quiz = new Quiz('easy', this.zombieFactory);
-    quiz.createQuestion();
-
     // Create the lemonade stand
     var lemonadeStand = new LemonadeStand();
 
     lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
+
+    // Create the quiz
+    let quiz = new Quiz('hard', this.zombieFactory);
+    quiz.createQuestion();
 
     // Create the zombies
     var aZombie = new Zombie('.zombie1');

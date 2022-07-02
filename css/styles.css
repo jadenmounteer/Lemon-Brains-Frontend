@@ -74,7 +74,7 @@ nav {
 
 .quiz {
   background-color: #87CEEB;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 .questions-div {
@@ -128,6 +128,7 @@ button:hover {
 .game-content {
   background-color: #87CEEB;
   width: 100%;
+  overflow: hidden;
 }
 
 .sky {
@@ -139,6 +140,15 @@ button:hover {
   background-color: rgba(126, 252, 0, 0.7725490196);
   width: 100%;
   height: 500px;
+}
+
+.lemonade-stand {
+  position: relative;
+  top: -109px;
+}
+
+.lemonade-stand-container {
+  position: absolute;
 }
 
 html {
@@ -157,7 +167,7 @@ html {
 }
 
 #try-again {
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 input:focus {
