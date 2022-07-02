@@ -84,19 +84,18 @@ export default class Quiz {
     let int1 = document.getElementById('int1').innerHTML;
     let operator = document.getElementById('operator').innerHTML;
     let int2 = document.getElementById('int2').innerHTML;
-    return this.createAnswer(int1, int2, operator);
+    return this.doArithmetic(int1, int2, operator);
   }
 
-  createAnswer(int1, int2, operator) {
+  doArithmetic(int1, int2, operator) {
     console.log(`Creating answer. The operator is ${operator}`);
-    // TODO Change the answer based on the opperation
     switch (operator) {
       case '+':
-        return int1 + int2;
+        return Number(int1) + Number(int2);
       case '-':
-        return int1 - int2;
+        return Number(int1) - Number(int2);
       case 'x':
-        return int1 * int2;
+        return Number(int1) * Number(int2);
       // case '/':
       //   return int1 / int2;
     }
