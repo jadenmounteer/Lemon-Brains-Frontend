@@ -17,6 +17,12 @@ function main() {
       options.renderView();
     });
 
+  document
+    .getElementById('close-settings-button')
+    .addEventListener('click', () => {
+      options.closeMenu();
+    });
+
   document.getElementById('try-again').addEventListener('click', () => {
     game.tryAgain();
   });
