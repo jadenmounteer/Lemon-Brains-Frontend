@@ -69,6 +69,11 @@ nav {
 #questions-header {
   text-align: center;
   margin-top: 10px;
+  padding-top: 10px;
+}
+
+.quiz {
+  background-color: rgb(240, 236, 236);
 }
 
 .questions-div {
