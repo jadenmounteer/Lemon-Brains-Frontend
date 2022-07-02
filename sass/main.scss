@@ -59,3 +59,7 @@ html {
     margin-bottom: 100px;
 
 }
+
+input:focus {
+    outline: none !important;
+}
