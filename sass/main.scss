@@ -93,20 +93,13 @@ input:focus {
     margin-bottom: 20px;
 }
 
-#start-game-button {
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 4.5s;
-}
 
 .menu-buttons-div {
     opacity: 0;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 5s;
+    animation-delay: 4s;
     display: flex;
     flex-direction: column;
     width: 200px;
