@@ -88,7 +88,6 @@ export default class Quiz {
   }
 
   doArithmetic(int1, int2, operator) {
-    console.log(`Creating answer. The operator is ${operator}`);
     switch (operator) {
       case '+':
         return Number(int1) + Number(int2);
@@ -106,17 +105,14 @@ export default class Quiz {
 
     // Generate the answer
     let answer = this.generateAnswer();
-    console.log(`The answer is ${answer}. You answered ${userAnswer}`);
 
     if (userAnswer == answer) {
-      console.log('correct!');
       document.getElementById('answer').value = '';
       document.getElementById('answer').classList.remove('answer-incorrect');
       document.getElementById('answer').classList.add('answer-correct');
       this.createQuestion(zombieFactory);
       zombieFactory.quenchZombie();
     } else {
-      console.log('incorrect!');
       document.getElementById('answer').classList.remove('answer-correct');
       document.getElementById('answer').classList.add('answer-incorrect');
     }
