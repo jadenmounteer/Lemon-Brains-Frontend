@@ -1,6 +1,26 @@
 import { readFromLS, writeToLS } from './utilities/localStorage.js';
 export default class Options {
-  constructor() {}
+  constructor() {
+    this.veryEasy = document.getElementById('very-easy');
+    this.easy = document.getElementById('easy');
+    this.medium = document.getElementById('medium');
+    this.hard = document.getElementById('hard');
+    this.extreme = document.getElementById('extreme');
+
+    this.difficultySettings = [
+      this.veryEasy,
+      this.easy,
+      this.medium,
+      this.hard,
+      this.extreme,
+    ];
+
+    this.slow = document.getElementById('slow');
+    this.normal = document.getElementById('normal');
+    this.fast = document.getElementById('fast');
+
+    this.speedSettings = [this.slow, this.normal, this.fast];
+  }
 
   renderView() {
     if (
@@ -19,29 +39,14 @@ export default class Options {
   }
 
   saveSettings() {
-    // Get the different radio buttons
-    const veryEasy = document.getElementById('very-easy');
-    const easy = document.getElementById('easy');
-    const medium = document.getElementById('medium');
-    const hard = document.getElementById('hard');
-    const extreme = document.getElementById('extreme');
-
-    const difficultySettings = [veryEasy, easy, medium, hard, extreme];
-
-    const slow = document.getElementById('slow');
-    const normal = document.getElementById('normal');
-    const fast = document.getElementById('fast');
-
-    const speedSettings = [slow, normal, fast];
-
     // Set the settings in Local Storage
-    difficultySettings.forEach((radioButton) => {
+    this.difficultySettings.forEach((radioButton) => {
       if (radioButton.checked) {
         writeToLS('difficulty', radioButton.value);
       }
     });
 
-    speedSettings.forEach((radioButton) => {
+    this.speedSettings.forEach((radioButton) => {
       if (radioButton.checked) {
         writeToLS('zombie-speed', radioButton.value);
       }
