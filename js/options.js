@@ -23,6 +23,7 @@ export default class Options {
   }
 
   renderView() {
+    this.initializeSettings();
     if (
       document.getElementById('options-menu').style.display == 'none' ||
       document.getElementById('options-menu').style.display == ''
@@ -49,6 +50,22 @@ export default class Options {
     this.speedSettings.forEach((radioButton) => {
       if (radioButton.checked) {
         writeToLS('zombie-speed', radioButton.value);
+      }
+    });
+  }
+
+  initializeSettings() {
+    this.difficultySettings.forEach((radioButton) => {
+      const settingSelected = readFromLS('difficulty');
+      if (settingSelected == radioButton.value) {
+        radioButton.checked = true;
+      }
+    });
+
+    this.speedSettings.forEach((radioButton) => {
+      const settingSelected = readFromLS('zombie-speed');
+      if (settingSelected == radioButton.value) {
+        radioButton.checked = true;
       }
     });
   }
