@@ -8,6 +8,7 @@ function main() {
   const game = new Game();
 
   document.getElementById('start-game-button').addEventListener('click', () => {
+    options.closeMenu();
     game.create();
   });
 
