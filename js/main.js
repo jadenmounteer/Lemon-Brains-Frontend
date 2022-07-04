@@ -7,16 +7,22 @@ function main() {
 
   const game = new Game();
 
-  document.getElementById('start-game-button').addEventListener('click', () => {
-    options.closeMenu();
-    game.create();
-  });
-
   document
     .getElementById('customize-stand-button')
     .addEventListener('click', () => {
       options.renderView();
     });
+
+  document.getElementById('start-game-button').addEventListener('click', () => {
+    options.closeMenu();
+    game.create();
+  });
+
+  // document
+  //   .getElementById('customize-stand-button')
+  //   .addEventListener('click', () => {
+  //     options.renderView();
+  //   });
 
   document
     .getElementById('close-settings-button')
