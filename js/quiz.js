@@ -65,7 +65,7 @@ export default class Quiz {
 
   createMaximum() {
     // TODO Create a maximum based on the difficulty
-    if (this.DIFFICULTY == 'very easy') {
+    if (this.DIFFICULTY == 'very-easy') {
       return 3;
     } else if (this.DIFFICULTY == 'easy') {
       return 5;

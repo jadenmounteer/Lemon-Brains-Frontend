@@ -15,9 +15,21 @@
   position: absolute;
 }
 
-.walking {
+.normal {
   animation-name: zombie-walk;
   animation-duration: 45s;
+  animation-iteration-count: infinite;
+}
+
+.slow {
+  animation-name: zombie-walk;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.fast {
+  animation-name: zombie-walk;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
 }
 

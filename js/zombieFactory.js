@@ -33,7 +33,7 @@ export default class ZombieFactory {
     playingField.insertAdjacentHTML('beforeend', newHtml);
   }
 
-  spawnZombie(listOfZombies) {
+  spawnZombie(listOfZombies, zombieSpeed) {
     const newZombieName = this.createNewZombieName(listOfZombies);
 
     this.createHtmlTag(newZombieName);
@@ -49,7 +49,7 @@ export default class ZombieFactory {
 
     document
       .getElementsByClassName(newZombieNameWithoutThePeriod)[0]
-      .classList.add('walking');
+      .classList.add(zombieSpeed);
 
     listOfZombies.push(newZombie);
   }

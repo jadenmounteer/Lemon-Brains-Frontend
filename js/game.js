@@ -2,6 +2,7 @@ import Zombie from './sprites/zombie.js';
 import Quiz from './quiz.js';
 import ZombieFactory from './zombieFactory.js';
 import LemonadeStand from './sprites/lemonade-stand.js';
+import { readFromLS, writeToLS } from './utilities/localStorage.js';
 
 export default class Game {
   updateInterval;
@@ -13,7 +14,12 @@ export default class Game {
   }
 
   create() {
-    // TODO Create settings object and initialize the settings
+    // Initialize the settings
+    const difficulty = readFromLS('difficulty');
+    const zombieSpeed = readFromLS('zombie-speed');
+    console.log(zombieSpeed);
+    console.log(difficulty);
+
     // Hide the main menu
     document.getElementById('menu-buttons').style.display = 'none';
 
@@ -26,13 +32,13 @@ export default class Game {
     document.getElementById('quiz').style.display = 'block';
 
     // Create the quiz
-    let quiz = new Quiz('easy', this.zombieFactory);
+    let quiz = new Quiz(difficulty, this.zombieFactory);
     quiz.createQuestion();
 
     // Create the zombies
     var aZombie = new Zombie('.zombie1');
     aZombie.image.onload = aZombie.walkLeft();
-    document.getElementsByClassName('zombie1')[0].classList.add('walking');
+    document.getElementsByClassName('zombie1')[0].classList.add(zombieSpeed);
     this.zombieFactory.listOfZombies.push(aZombie);
 
     // Set the update interval
@@ -54,7 +60,10 @@ export default class Game {
     const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
     if (randomInt == 0) {
       // If we spawn a zombie, call the zombie factory
-      this.zombieFactory.spawnZombie(this.zombieFactory.listOfZombies);
+      this.zombieFactory.spawnZombie(
+        this.zombieFactory.listOfZombies,
+        readFromLS('zombie-speed')
+      );
     }
   }
   gameOver() {
