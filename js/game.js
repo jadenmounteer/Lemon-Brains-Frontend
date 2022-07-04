@@ -24,9 +24,9 @@ export default class Game {
     document.getElementById('menu-buttons').style.display = 'none';
 
     // Create the lemonade stand
-    var lemonadeStand = new LemonadeStand();
+    // var lemonadeStand = new LemonadeStand();
 
-    lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
+    // lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
 
     // Show the quiz
     document.getElementById('quiz').style.display = 'block';
