@@ -41,10 +41,25 @@
     </div>
 
     <div class="options-menu" id="options-menu">
-        <h1 class="lemon customize-settings-header" id="questions-header">
-            Customize your settings
-        </h1>
-        <h2 class="menu-header">Difficulty</h2>
+        <form action="">
+            <h1 class="lemon customize-settings-header" id="questions-header">
+                Customize your settings
+            </h1>
+            <h2 class="menu-header">Difficulty</h2>
+            <input type="radio" id="very-easy" name="difficulty" value="very-easy">
+            <label for="very-easy">Very Easy</label><br>
+            <input type="radio" id="easy" name="difficulty" value="easy">
+            <label for="easy">Easy</label><br>
+            <input type="radio" id="medium" name="difficulty" value="medium" checked>
+            <label for="medium">Medium</label><br>
+            <input type="radio" id="hard" name="difficulty" value="hard">
+            <label for="hard">Hard</label><br>
+            <input type="radio" id="extreme" name="difficulty" value="extreme">
+            <label for="extreme">Extreme</label>
+            <h2 class="menu-header">Zombie Speed</h2>
+
+        </form>
+        
 
         <button class="close-settings-button" id="close-settings-button">Close</button>
     </div>
