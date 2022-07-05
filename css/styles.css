@@ -182,6 +182,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.time-left-div {
+  text-align: center;
+  font-size: 1.5em;
+}
+
 .game-content {
   background-color: #87CEEB;
   width: 100%;
