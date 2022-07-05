@@ -87,8 +87,13 @@ nav {
 }
 
 .player-info {
-  margin-right: 50px;
   font-size: 1.5em;
+  margin-bottom: 10px;
+}
+@media (min-width: 950px) {
+  .player-info {
+    margin-right: 50px;
+  }
 }
 
 .logo {

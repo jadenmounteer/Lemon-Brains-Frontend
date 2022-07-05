@@ -15,8 +15,12 @@ nav {
 }
 
 .player-info {
-    margin-right: 50px;
+    
     font-size: 1.5em;
+    margin-bottom: 10px;
+    @include breakpoint(medium) {
+        margin-right: 50px;
+    }
 }
 
 .logo {
