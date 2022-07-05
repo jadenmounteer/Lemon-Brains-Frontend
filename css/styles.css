@@ -71,9 +71,14 @@
 
 nav {
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
+}
+@media (min-width: 950px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .playing-field {
@@ -83,6 +88,15 @@ nav {
 
 .player-info {
   margin-right: 50px;
+}
+
+.logo {
+  margin-left: 50px;
+}
+@media (min-width: 950px) {
+  .logo {
+    margin-left: 0px;
+  }
 }
 
 #questions-header {

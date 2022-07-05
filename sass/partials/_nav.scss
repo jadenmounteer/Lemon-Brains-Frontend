@@ -1,9 +1,12 @@
 nav {
     // background-color: #CA7D53;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    @include breakpoint(medium) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .playing-field {
@@ -14,3 +17,11 @@ nav {
 .player-info {
     margin-right: 50px;
 }
+
+.logo {
+    margin-left: 50px;
+    @include breakpoint(medium) {
+        margin-left: 0px;
+    }
+}
+
