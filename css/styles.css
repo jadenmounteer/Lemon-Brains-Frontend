@@ -71,11 +71,18 @@
 
 nav {
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .playing-field {
   border: 0px solid;
   max-height: 500px;
+}
+
+.player-info {
+  margin-right: 50px;
 }
 
 #questions-header {
