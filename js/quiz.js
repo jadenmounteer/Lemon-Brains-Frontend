@@ -31,7 +31,7 @@ export default class Quiz {
     const minimum = this.createMinimum();
     const maximum = this.createMaximum();
     const int1 = this.generateInteger(minimum, maximum);
-    const int2 = this.generateInteger(minimum, maximum);
+    const int2 = this.generateInteger(minimum, int1); // we pass in int1 as the maximum here so we don't have any negative numbers
 
     const operator = this.createOperator();
 
