@@ -17,8 +17,8 @@ export default class Game {
     // Initialize the settings
     const difficulty = readFromLS('difficulty');
     const zombieSpeed = readFromLS('zombie-speed');
-    console.log(zombieSpeed);
-    console.log(difficulty);
+    const lengthOfDay = readFromLS('lengthOfDay');
+    console.log(lengthOfDay);
 
     // Hide the main menu
     document.getElementById('menu-buttons').style.display = 'none';
