@@ -1,8 +1,8 @@
 import Zombie from './sprites/zombie.js';
 import Quiz from './quiz.js';
 import ZombieFactory from './zombieFactory.js';
-import LemonadeStand from './sprites/lemonade-stand.js';
 import { readFromLS, writeToLS } from './utilities/localStorage.js';
+import Day from './day.js';
 
 export default class Game {
   updateInterval;
@@ -18,7 +18,6 @@ export default class Game {
     const difficulty = readFromLS('difficulty');
     const zombieSpeed = readFromLS('zombie-speed');
     const lengthOfDay = readFromLS('lengthOfDay');
-    console.log(lengthOfDay);
 
     // Hide the main menu
     document.getElementById('menu-buttons').style.display = 'none';
@@ -27,6 +26,12 @@ export default class Game {
     // var lemonadeStand = new LemonadeStand();
 
     // lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
+
+    // Create the day
+    let numberOfDay = 1;
+
+    const day = new Day();
+    day.initialize(numberOfDay);
 
     // Show the quiz
     document.getElementById('quiz').style.display = 'block';
