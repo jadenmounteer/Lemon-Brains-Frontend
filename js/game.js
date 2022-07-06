@@ -8,6 +8,7 @@ export default class Game {
   updateInterval;
   // listOfZombies = [];
   zombieFactory;
+  day;
 
   constructor() {
     this.zombieFactory = new ZombieFactory();
@@ -30,8 +31,8 @@ export default class Game {
     // Create the day
     let numberOfDay = 1;
 
-    const day = new Day();
-    day.initialize(numberOfDay);
+    this.day = new Day();
+    this.day.initialize(numberOfDay);
 
     // Show the quiz
     document.getElementById('quiz').style.display = 'block';
@@ -53,6 +54,9 @@ export default class Game {
   }
 
   update() {
+    // Update the day
+    this.day.updateUI();
+
     // Check if game over
     this.zombieFactory.listOfZombies.forEach((zombie) => {
       let zombiePosition = zombie.getXCoordinate();

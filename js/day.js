@@ -3,5 +3,10 @@ export default class Day {
     document.getElementById('number-of-days').innerHTML = numberOfDay;
   }
 
-  updateUI() {}
+  updateUI() {
+    console.log('Updating time');
+    let timeLeft = Number(document.getElementById('day-time-left').innerHTML);
+    timeLeft -= 1;
+    document.getElementById('day-time-left').innerHTML = timeLeft;
+  }
 }
