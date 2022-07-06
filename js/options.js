@@ -20,6 +20,18 @@ export default class Options {
     this.fast = document.getElementById('fast');
 
     this.speedSettings = [this.slow, this.normal, this.fast];
+
+    this.thirtySeconds = document.getElementById('thirtySeconds');
+    this.oneMinute = document.getElementById('oneMinute');
+    this.twoMinutes = document.getElementById('twoMinutes');
+    this.infinite = document.getElementById('infinite');
+
+    this.lengthOfDaySettings = [
+      this.thirtySeconds,
+      this.oneMinute,
+      this.twoMinutes,
+      this.infinite,
+    ];
   }
 
   renderView() {
@@ -52,6 +64,12 @@ export default class Options {
         writeToLS('zombie-speed', radioButton.value);
       }
     });
+
+    this.lengthOfDaySettings.forEach((radioButton) => {
+      if (radioButton.checked) {
+        writeToLS('lengthOfDay', radioButton.value);
+      }
+    });
   }
 
   initializeSettings() {
@@ -64,6 +82,13 @@ export default class Options {
 
     this.speedSettings.forEach((radioButton) => {
       const settingSelected = readFromLS('zombie-speed');
+      if (settingSelected == radioButton.value) {
+        radioButton.checked = true;
+      }
+    });
+
+    this.lengthOfDaySettings.forEach((radioButton) => {
+      const settingSelected = readFromLS('lengthOfDay');
       if (settingSelected == radioButton.value) {
         radioButton.checked = true;
       }
