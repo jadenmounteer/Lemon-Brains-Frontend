@@ -62,7 +62,10 @@ export default class Game {
 
     // Check if end of day
     const endOfDay = this.day.endOfDay();
-    console.log(`End of day: ${endOfDay}`);
+    if (endOfDay) {
+      this.endDay();
+      return;
+    }
 
     // Check if game over
     this.zombieFactory.listOfZombies.forEach((zombie) => {
@@ -82,6 +85,20 @@ export default class Game {
       );
     }
   }
+
+  endDay() {
+    // Clear the update interval
+    clearInterval(this.updateInterval);
+
+    // Stop the zombies from moving by removing their walking class
+    this.pauseZombies();
+
+    document.getElementById('quiz').style.display = 'none';
+
+    // TODO Show the end of day div
+    document.getElementById('game-over-div').style.display = 'block';
+  }
+
   gameOver() {
     // Clear the update interval
     clearInterval(this.updateInterval);
