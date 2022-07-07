@@ -60,6 +60,10 @@ export default class Game {
     // Update the day
     this.day.updateUI();
 
+    // Check if end of day
+    const endOfDay = this.day.endOfDay();
+    console.log(`End of day: ${endOfDay}`);
+
     // Check if game over
     this.zombieFactory.listOfZombies.forEach((zombie) => {
       let zombiePosition = zombie.getXCoordinate();
