@@ -20,6 +20,9 @@ export default class Game {
     const zombieSpeed = readFromLS('zombie-speed');
     const lengthOfDay = readFromLS('lengthOfDay');
 
+    // Set the time left
+    document.getElementById('day-time-left').innerHTML = lengthOfDay;
+
     // Hide the main menu
     document.getElementById('menu-buttons').style.display = 'none';
 

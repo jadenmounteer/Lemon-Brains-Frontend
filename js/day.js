@@ -4,7 +4,10 @@ export default class Day {
   }
 
   updateUI() {
-    console.log('Updating time');
+    if (document.getElementById('day-time-left').innerHTML == 'infinite') {
+      // If we are dealing with infinite time
+      return;
+    }
     let timeLeft = Number(document.getElementById('day-time-left').innerHTML);
     timeLeft -= 1;
     document.getElementById('day-time-left').innerHTML = timeLeft;
