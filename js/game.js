@@ -26,11 +26,6 @@ export default class Game {
     // Hide the main menu
     document.getElementById('menu-buttons').style.display = 'none';
 
-    // Create the lemonade stand
-    // var lemonadeStand = new LemonadeStand();
-
-    // lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
-
     // Create the day
     let numberOfDay = readFromLS('numberOfDay');
 

@@ -9,10 +9,6 @@ export default class ZombieFactory {
 
   createNewZombieName(listOfZombies) {
     let lastZombieCreated = listOfZombies[listOfZombies.length - 1];
-    console.log(`The last zombie created was ${lastZombieCreated}`);
-    // if (!lastZombieCreated) {
-    //   let lastZombieCreated
-    // }
     let lastZombieName = '.zombie1';
     if (lastZombieCreated) {
       lastZombieName = lastZombieCreated.canvasQuery;
