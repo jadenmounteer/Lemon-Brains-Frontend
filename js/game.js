@@ -68,6 +68,9 @@ export default class Game {
       }
     });
 
+    // TODO how about, the more days, the more zombies spawn?
+    // If it is infinite, the zombies have a 1 in 3 chance of spawning
+
     // Check if we should spawn a zombie (random. More chance the more difficult)
     const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
     if (randomInt == 0) {
