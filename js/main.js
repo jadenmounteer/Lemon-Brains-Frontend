@@ -1,6 +1,7 @@
 import Game from './game.js';
 import Options from './options.js';
 import LemonadeStand from './sprites/lemonade-stand.js';
+import { readFromLS, writeToLS } from './utilities/localStorage.js';
 
 function main() {
   const options = new Options();
@@ -29,7 +30,11 @@ function main() {
   });
 
   document.getElementById('next-day').addEventListener('click', () => {
-    game.nextDay();
+    let numberOfDay = readFromLS('numberOfDay');
+    numberOfDay += 1;
+    writeToLS('numberOfDay', numberOfDay);
+    document.getElementById('end-of-day-div').style.display = 'none';
+    game.create();
   });
 
   // Create the lemonade stand

@@ -32,7 +32,11 @@ export default class Game {
     // lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
 
     // Create the day
-    let numberOfDay = 1;
+    let numberOfDay = readFromLS('numberOfDay');
+
+    if (!numberOfDay) {
+      numberOfDay = 1;
+    }
 
     this.day = new Day();
     this.day.initialize(numberOfDay);
@@ -43,12 +47,6 @@ export default class Game {
     // Create the quiz
     let quiz = new Quiz(difficulty, this.zombieFactory);
     quiz.createQuestion();
-
-    // Create the zombies
-    var aZombie = new Zombie('.zombie1');
-    aZombie.image.onload = aZombie.walkLeft();
-    document.getElementsByClassName('zombie1')[0].classList.add(zombieSpeed);
-    this.zombieFactory.listOfZombies.push(aZombie);
 
     // Set the update interval
     this.updateInterval = setInterval(() => {
@@ -95,6 +93,12 @@ export default class Game {
 
     document.getElementById('quiz').style.display = 'none';
 
+    // Quench all of the remaining zombies
+    const numberOfZombies = this.zombieFactory.listOfZombies.length;
+    for (let i = 0; i < numberOfZombies; i++) {
+      this.zombieFactory.quenchZombie();
+    }
+
     // TODO To start a new day, I wonder if I should add a click listener to the button in the end of day div
     // in the main function.
     document.getElementById('end-of-day-div').style.display = 'block';
@@ -123,6 +127,4 @@ export default class Game {
   tryAgain() {
     location.reload();
   }
-
-  nextDay() {}
 }
