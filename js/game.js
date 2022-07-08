@@ -95,7 +95,6 @@ export default class Game {
 
     document.getElementById('quiz').style.display = 'none';
 
-    // TODO Show the end of day div
     // TODO To start a new day, I wonder if I should add a click listener to the button in the end of day div
     // in the main function.
     document.getElementById('end-of-day-div').style.display = 'block';
@@ -124,4 +123,6 @@ export default class Game {
   tryAgain() {
     location.reload();
   }
+
+  nextDay() {}
 }

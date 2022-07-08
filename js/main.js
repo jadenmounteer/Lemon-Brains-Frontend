@@ -28,6 +28,10 @@ function main() {
     game.tryAgain();
   });
 
+  document.getElementById('next-day').addEventListener('click', () => {
+    game.nextDay();
+  });
+
   // Create the lemonade stand
   var lemonadeStand = new LemonadeStand();
 
