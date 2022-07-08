@@ -98,7 +98,7 @@ export default class Game {
     // TODO Show the end of day div
     // TODO To start a new day, I wonder if I should add a click listener to the button in the end of day div
     // in the main function.
-    document.getElementById('game-over-div').style.display = 'block';
+    document.getElementById('end-of-day-div').style.display = 'block';
   }
 
   gameOver() {

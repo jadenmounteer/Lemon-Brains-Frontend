@@ -258,7 +258,11 @@ html {
   padding-top: 20px;
 }
 
-#try-again {
+#success {
+  padding-top: 20px;
+}
+
+#try-again, #next-day {
   margin-bottom: 150px;
 }
 
