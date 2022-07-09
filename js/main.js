@@ -4,6 +4,14 @@ import LemonadeStand from './sprites/lemonade-stand.js';
 import { readFromLS, writeToLS } from './utilities/localStorage.js';
 
 function main() {
+  // Set the number of day
+  let numberOfDay = readFromLS('numberOfDay');
+
+  if (!numberOfDay) {
+    numberOfDay = 1;
+  }
+  document.getElementById('number-of-days').innerHTML = numberOfDay;
+
   const options = new Options();
 
   const game = new Game();
@@ -16,6 +24,9 @@ function main() {
 
   document.getElementById('start-game-button').addEventListener('click', () => {
     options.closeMenu();
+    // Reset the user's stats
+    numberOfDay = 1;
+    writeToLS('numberOfDay', numberOfDay);
     game.create();
   });
 
