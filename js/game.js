@@ -17,7 +17,6 @@ export default class Game {
   create() {
     // Initialize the settings
     const difficulty = readFromLS('difficulty');
-    const zombieSpeed = readFromLS('zombie-speed');
     const lengthOfDay = readFromLS('lengthOfDay');
 
     // Set the time left
@@ -72,7 +71,8 @@ export default class Game {
     // If it is infinite, the zombies have a 1 in 3 chance of spawning
 
     // Check if we should spawn a zombie (random. More chance the more difficult)
-    const randomInt = Math.floor(Math.random() * 2); // 1 in 3 chance
+    const chanceOfSpawning = this.configureZombieSpawnRate();
+    const randomInt = Math.floor(Math.random() * chanceOfSpawning); // 1 in 3 chance
     if (randomInt == 0) {
       // If we spawn a zombie, call the zombie factory
       this.zombieFactory.spawnZombie(
@@ -80,6 +80,38 @@ export default class Game {
         readFromLS('zombie-speed')
       );
     }
+  }
+
+  configureZombieSpawnRate() {
+    const numberOfDay = Number(readFromLS('numberOfDay'));
+
+    if (numberOfDay == 1 || numberOfDay == 2) {
+      // 1 in 6 chance of spawning
+      return 5;
+    }
+
+    if (numberOfDay == 3 || numberOfDay == 4) {
+      // 1 in 4 chance of spawning
+      return 3;
+    }
+
+    if (numberOfDay === 5 || numberOfDay === 6) {
+      // 1 in 3 chance of spawning
+      return 2;
+    }
+
+    if (numberOfDay === 7 || numberOfDay === 8 || numberOfDay === 9) {
+      // 1 in 2 chance of spawning
+      return 1;
+    }
+
+    if (numberOfDay >= 10) {
+      // 100 chance of spawning
+      return 0;
+    }
+
+    // Infinite time defaults to 1 in 3 chance
+    return 2;
   }
 
   endDay() {
