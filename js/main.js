@@ -16,6 +16,19 @@ function main() {
 
   const game = new Game();
 
+  // Check if we want to display the continue venture button
+  if (checkSavedData()) {
+    const continueVentureButton = document.getElementById(
+      'continue-venture-button'
+    );
+    continueVentureButton.style.display = 'block';
+
+    continueVentureButton.addEventListener('click', () => {
+      options.closeMenu();
+      game.create();
+    });
+  }
+
   document
     .getElementById('customize-stand-button')
     .addEventListener('click', () => {
@@ -52,6 +65,16 @@ function main() {
   var lemonadeStand = new LemonadeStand();
 
   lemonadeStand.image.onload = lemonadeStand.blinkAnimation();
+}
+
+function checkSavedData() {
+  let numberOfDay = readFromLS('numberOfDay');
+
+  if (numberOfDay <= 1 || !numberOfDay) {
+    return false;
+  }
+
+  return true;
 }
 
 main();

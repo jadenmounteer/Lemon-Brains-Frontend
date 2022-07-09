@@ -112,6 +112,10 @@ input:focus {
     margin-right: auto;
 }
 
+#continue-venture-button {
+    display: none;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
