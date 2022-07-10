@@ -1,3 +1,5 @@
+import { readFromLS } from './utilities/localStorage.js';
+
 export default class Quiz {
   DIFFICULTY = 'easy';
 
@@ -42,6 +44,20 @@ export default class Quiz {
   }
 
   createOperator() {
+    const questionTypes = readFromLS('questionTypes');
+
+    if (questionTypes === 'addition') {
+      return '+';
+    }
+
+    if (questionTypes === 'subtraction') {
+      return '-';
+    }
+
+    if (questionTypes === 'multiplication') {
+      return 'x';
+    }
+
     const randomInt = Math.floor(Math.random() * 3);
     switch (randomInt) {
       case 0:

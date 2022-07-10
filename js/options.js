@@ -36,11 +36,13 @@ export default class Options {
     this.addition = document.getElementById('addition');
     this.subtraction = document.getElementById('subtraction');
     this.multiplication = document.getElementById('multiplication');
+    this.all = document.getElementById('all');
 
-    questionTypeSettings = [
+    this.questionTypeSettings = [
       this.addition,
       this.subtraction,
       this.multiplication,
+      this.all,
     ];
   }
 
