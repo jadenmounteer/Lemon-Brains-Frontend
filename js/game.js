@@ -85,12 +85,12 @@ export default class Game {
   configureZombieSpawnRate() {
     const numberOfDay = Number(readFromLS('numberOfDay'));
 
-    if (numberOfDay == 1 || numberOfDay == 2) {
-      // 1 in 6 chance of spawning
-      return 5;
-    }
-
-    if (numberOfDay == 3 || numberOfDay == 4) {
+    if (
+      numberOfDay == 1 ||
+      numberOfDay == 2 ||
+      numberOfDay == 3 ||
+      numberOfDay == 4
+    ) {
       // 1 in 4 chance of spawning
       return 3;
     }
