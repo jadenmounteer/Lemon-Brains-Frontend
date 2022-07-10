@@ -32,6 +32,16 @@ export default class Options {
       this.twoMinutes,
       this.infinite,
     ];
+
+    this.addition = document.getElementById('addition');
+    this.subtraction = document.getElementById('subtraction');
+    this.multiplication = document.getElementById('multiplication');
+
+    questionTypeSettings = [
+      this.addition,
+      this.subtraction,
+      this.multiplication,
+    ];
   }
 
   renderView() {
@@ -70,6 +80,12 @@ export default class Options {
         writeToLS('lengthOfDay', radioButton.value);
       }
     });
+
+    this.questionTypeSettings.forEach((radioButton) => {
+      if (radioButton.checked) {
+        writeToLS('questionTypes', radioButton.value);
+      }
+    });
   }
 
   initializeSettings() {
@@ -89,6 +105,13 @@ export default class Options {
 
     this.lengthOfDaySettings.forEach((radioButton) => {
       const settingSelected = readFromLS('lengthOfDay');
+      if (settingSelected == radioButton.value) {
+        radioButton.checked = true;
+      }
+    });
+
+    this.questionTypeSettings.forEach((radioButton) => {
+      const settingSelected = readFromLS('questionTypes');
       if (settingSelected == radioButton.value) {
         radioButton.checked = true;
       }
